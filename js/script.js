@@ -1,35 +1,27 @@
+function add(q1, q2, q3, q4, q5) {
+  return q1 + q2 + q3 + q4 + q5;
+}
+
+
 $(document).ready(function () {
-  const q1 = parseInt($('#question1').val());
-  const q2 = parseInt($('#question2').val());
-  const q3 = parseInt($('#question3').val());
-  const q4 = parseInt($('#question4').val());
-  const q5 = parseInt($('#question5').val());
   const result = $('.form-group').submit(function (event) {
-    const result = q1 + q2 + q3 + q4 + q5;
-    $(".form-group").text(result);
     event.preventDefault()
-    console.log(result)
+    const q1 = parseInt($('#question1').val());
+    const q2 = parseInt($('#question2').val());
+    const q3 = parseInt($('#question3').val());
+    const q4 = parseInt($('#question4').val());
+    const q5 = parseInt($('#question5').val());
+    const result = add(q1, q2, q3, q4, q5);
+    $("#output-result").text();
+
+    if (result === 0) {
+      return "You are a DEMOCRAT!"
+    }
+    else if (result === 5) {
+      return "You're a TRUMP supporter"
+    }
+    else { return "do you even follow politics?" }
   })
-
-
-
-  if (q1 && q2 && q3 && q4 && q5 === 0) {
-    return "You are a DEMOCRAT!"
-  }
-  else if (q1 && q2 && q3 && q4 && q5 === 5) {
-    return "You're a TRUMP supporter"
-  }
-  else { return "do you even follow politics?" }
-
-  // const result = $('.form-group').submit(function (event) {
-  alert("result")
-  event.preventDefault()
-  // const q1 = $('#question1').val();
-  // const q2 = $('#question2').val();
-  // const q3 = $('#question3').val();
-  // const q4 = $('#question4').val();
-  // const q5 = $('#question5').val();
-
 })
 
 // $(document).ready(function () {
