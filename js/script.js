@@ -12,15 +12,15 @@ $(document).ready(function () {
     const q4 = parseInt($('#question4').val());
     const q5 = parseInt($('#question5').val());
     const result = add(q1, q2, q3, q4, q5);
-    $("#output-result").text();
+    $("#output-result").text(result);
 
     if (result === 0) {
-      return "You are a DEMOCRAT!"
+      return $("#output-result").text("You are a DEMOCRAT!")
     }
     else if (result === 5) {
-      return "You're a TRUMP supporter"
+      return $("#output-result").text("You're a TRUMP supporter")
     }
-    else { return "do you even follow politics?" }
+    else { return $("#output-result").text("do you even follow politics?") }
   })
 })
 
